@@ -1,0 +1,24 @@
+import java.util.HashSet;
+import java.util.Set;
+
+// Concrete class for contacting loan takers whose limits have expired
+class LoanExtension implements Bank {
+    private Set<String> loanTakers;
+
+    public LoanExtension() {
+        loanTakers = new HashSet<>();
+    }
+
+    // Method to add loan takers who need to be contacted
+    public void addLoanTaker(String loanTaker) {
+        loanTakers.add(loanTaker);
+    }
+
+    @Override
+    public void performTask() {
+        System.out.println("Contacting Loan Takers with expired limits...");
+        for (String loanTaker : loanTakers) {
+            System.out.println("Contacting Loan Taker: " + loanTaker);
+        }
+    }
+}
