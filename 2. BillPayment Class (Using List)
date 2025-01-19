@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Concrete class for receiving bill payments
+class BillPayment implements Bank {
+    private List<String> payments;
+
+    public BillPayment() {
+        payments = new ArrayList<>();
+    }
+
+    // Method to simulate receiving a payment
+    public void receivePayment(String paymentDetails) {
+        payments.add(paymentDetails);
+    }
+
+    @Override
+    public void performTask() {
+        System.out.println("Processing Bill Payments...");
+        for (String payment : payments) {
+            System.out.println("Payment Received: " + payment);
+        }
+    }
+}
