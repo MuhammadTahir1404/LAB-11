@@ -1,0 +1,24 @@
+import java.util.HashMap;
+import java.util.Map;
+
+// Concrete class for opening new accounts
+class AccountOpening implements Bank {
+    private Map<String, String> accounts;
+
+    public AccountOpening() {
+        accounts = new HashMap<>();
+    }
+
+    // Method to simulate opening a new account
+    public void openAccount(String accountNumber, String accountHolderName) {
+        accounts.put(accountNumber, accountHolderName);
+    }
+
+    @Override
+    public void performTask() {
+        System.out.println("Opening New Accounts...");
+        for (Map.Entry<String, String> entry : accounts.entrySet()) {
+            System.out.println("Account Number: " + entry.getKey() + ", Account Holder: " + entry.getValue());
+        }
+    }
+}
