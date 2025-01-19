@@ -1,0 +1,4 @@
+// Bank Interface (Abstract Data Type)
+public interface Bank {
+    void performTask();
+}
