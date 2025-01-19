@@ -1,0 +1,26 @@
+public class BankApplication {
+
+    public static void main(String[] args) {
+        // Create instances of each concrete class
+        BillPayment billPayment = new BillPayment();
+        AccountOpening accountOpening = new AccountOpening();
+        LoanExtension loanExtension = new LoanExtension();
+
+        // Simulate receiving payments
+        billPayment.receivePayment("Electricity Bill: $100");
+        billPayment.receivePayment("Water Bill: $50");
+
+        // Simulate opening new accounts
+        accountOpening.openAccount("1001", "John Doe");
+        accountOpening.openAccount("1002", "Jane Smith");
+
+        // Simulate loan extension requests
+        loanExtension.addLoanTaker("Mark Lee");
+        loanExtension.addLoanTaker("Susan Davis");
+
+        // Perform tasks
+        billPayment.performTask();
+        accountOpening.performTask();
+        loanExtension.performTask();
+    }
+}
